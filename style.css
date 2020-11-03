@@ -1,5 +1,63 @@
+body {
+    background: rgb(113, 19, 105);
+}
+
 #game-canvas {
-    width: 500px;
-    height: 500px;
-    background-color: gainsboro;
+    position: fixed;
+    left: 24vw;
+    width: 640px;
+    height: 640px;
+    background-image: url(./assets/Synthwave-taxi-bg.png);
+    border-radius: 5px;
+}
+
+#intro-container {
+    z-index: 900;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background: rgba(111, 23, 242, 0.405);
+}
+
+.hidden {
+    display: none;
+}
+
+#instructions {
+    z-index: 999;
+    position: fixed;
+    width: 60vw;
+    top: 5vh;
+    left: 15vw;
+    padding: 50px;
+    background: purple;
+    color: gold;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 10px 10px 11px rgba(251, 0, 255, 0.511);
+}
+
+.game-title {
+    text-align: center;
+    width: 100%;
+    font-family: Permanent Marker;
+}
+
+#game-instruction {
+    margin-bottom: 20px;
+}
+
+#start-button {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    font-family: Permanent Marker;
+    background: gold;
+    outline: none;
+    border: 1px solid black;
 }

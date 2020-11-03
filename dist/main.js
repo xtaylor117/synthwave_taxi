@@ -12,6 +12,6 @@
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("console.log(\"Webpack is working!\")\n\n//# sourceURL=webpack://synthwave-taxi/./src/index.js?");
+eval("console.log(\"Webpack is working!\")\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  let startButton = document.getElementById(\"start-button\");\n\n  let canvas = document.getElementById(\"game-canvas\");\n  let ctx = canvas.getContext(\"2d\");\n\n    ctx.beginPath();\n    ctx.rect(143, 130, 15, 15);\n    ctx.fillStyle = \"#FFFFFF\";\n    ctx.fill();\n    ctx.closePath();\n\n  startButton.addEventListener(\"click\", () => { \n    document.getElementById(\"intro-container\").classList.add(\"hidden\");\n  })\n})\n\n//# sourceURL=webpack://synthwave-taxi/./src/index.js?");
 /******/ })()
 ;
