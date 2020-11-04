@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // })
 
     setInterval(() => {
-      let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
-      let carTop = parseInt(window.getComputedStyle(car).getPropertyValue("top"))
+      // let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
+      let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
 
       // let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
       // let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
@@ -104,18 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
       // let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
 
-      let car1Top = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("top"))
-      let car2Top = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("top"))
-      let car3Top = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("top"))
-      let car4Top = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("top"))
-      let car5Top = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("top"))
+      let car1Bottom = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("bottom"))
+      let car2Bottom = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("bottom"))
+      let car3Bottom = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("bottom"))
+      let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
+      let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
       if (
-        (carTop === car1Top) || 
-        (carTop === car2Top) ||
-        (carTop === car3Top) ||
-        (carTop === car4Top) ||
-        (carTop === car5Top)) {
+        (carBottom === car1Bottom) || 
+        (carBottom === car2Bottom) ||
+        (carBottom === car3Bottom) ||
+        (carBottom === car4Bottom) ||
+        (carBottom === car5Bottom)) {
           alert("You crashed! Game over.");
           car.style.animation = "none";
           otherCar1.style.animation = "none";
