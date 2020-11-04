@@ -2,61 +2,49 @@ console.log("Webpack is working!")
 
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
+  let otherCar = document.getElementById("other-cars")
+  let car = document.getElementById("car")
 
-  let canvas = document.getElementById("game-canvas");
-  let ctx = canvas.getContext("2d");
-  let x = canvas.width/2 - 7;
-  let y = canvas.height-17;
+  // otherCar.addEventListener('animationiteration', () => {
+  //   let random = Math.floor(Math.random() * 5)
+  //   let left = random * 10;
+  //   otherCar.style.left = 181 + left + "px"
+  // })
 
-  let rightPressed = false;
-  let leftPressed = false;
-
-  function drawCar() {
-    ctx.beginPath();
-    ctx.rect(x, y, 15, 15);
-    ctx.fillStyle = "#FFFFFF";
-    ctx.fill();
-    ctx.closePath();
+  function jump() {
+    car.classList.toggle("animate");
+    setTimeout(function(){
+      car.classList.toggle("animate")
+    }, 500)
   }
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawCar();
-    if(rightPressed) {
-      x += 7;
-      if (x + 15 > canvas.width - 70) {
-        x = canvas.width - 70;
-      }
-    } else if(leftPressed) {
-      x -= 7;
-      if (x < 55) {
-        x = 55;
-      }
+  function moveLeft() {
+    let left = parseInt(window.getComputedStyle(car).getPropertyValue("left"));
+    left -= 90;
+    if( left >= 100){
+      car.style.left = left + "px";
     }
   }
 
-  function keyDownHandler(e) {
-      if(e.key == "Right" || e.key == "ArrowRight") {
-          rightPressed = true;
-      }
-      else if(e.key == "Left" || e.key == "ArrowLeft") {
-          leftPressed = true;
-      }
-  }
-
-  function keyUpHandler(e) {
-      if(e.key == "Right" || e.key == "ArrowRight") {
-          rightPressed = false;
-      }
-      else if(e.key == "Left" || e.key == "ArrowLeft") {
-          leftPressed = false;
-      }
+  function moveRight() {
+    let left = parseInt(window.getComputedStyle(car).getPropertyValue("left"));
+    left += 90;
+    if( left < 500){
+      car.style.left = left + "px";
+    }
   }
 
   startButton.addEventListener("click", () => { 
     document.getElementById("intro-container").classList.add("hidden");
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-    setInterval(draw, 10);
+    document.addEventListener("keydown", e => {
+      if(e.key == "Right" || e.key == "ArrowRight") {
+        moveRight();
+      }
+      else if(e.key == "Left" || e.key == "ArrowLeft") {
+        moveLeft();
+      } else if (e.keyCode == 32) {
+        jump();
+      }
+    });
   })
 })

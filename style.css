@@ -2,13 +2,145 @@ body {
     background: rgb(113, 19, 105);
 }
 
-#game-canvas {
+#game {
     position: fixed;
     left: 24vw;
     width: 640px;
     height: 640px;
     background-image: url(./assets/Synthwave-taxi-bg.png);
     border-radius: 5px;
+}
+
+#road {
+    position: relative;
+    height: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#car {
+    width: 50px;
+    height: 100px;
+    background: white;
+    position: absolute;
+    top: 515px;
+    left: 295px;
+}
+
+.animate {
+    animation: jump 500ms;
+}
+
+@keyframes jump {
+    0%{top: 515px;}
+    30%{top: 425px;}
+    70%{top: 425px;}
+    100%{top: 515px;}
+}
+
+#other-car-1 {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 40%;
+    left: 281px;
+    animation: slide1 1.5s infinite linear;
+}
+
+@keyframes slide1 {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(-175px) translatey(280px);
+        width: 50px;
+        height: 100px;
+    }
+}
+
+#other-car-2 {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 40%;
+    left: 298px;
+    animation: slide2 1.5s infinite linear;
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(-100px) translatey(280px);
+        width: 50px;
+        height: 100px;
+    }
+}
+
+#other-car-3 {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 40%;
+    left: 315px;
+    animation: slide3 1.5s infinite linear;
+}
+
+@keyframes slide3 {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(-20px) translatey(280px);
+        width: 50px;
+        height: 100px;
+    }
+}
+
+#other-car-4 {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 40%;
+    left: 332px;
+    animation: slide4 1.5s infinite linear;
+}
+
+@keyframes slide4 {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(50px) translatey(280px);
+        width: 50px;
+        height: 100px;
+    }
+}
+
+#other-car-5 {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 40%;
+    left: 349px;
+    animation: slide5 1.5s infinite linear;
+}
+
+@keyframes slide5 {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    100% {
+        transform: translatex(125px) translatey(280px);
+        width: 50px;
+        height: 100px;
+    }
 }
 
 #intro-container {
@@ -61,3 +193,4 @@ body {
     outline: none;
     border: 1px solid black;
 }
+
