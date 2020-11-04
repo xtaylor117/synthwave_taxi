@@ -2,7 +2,12 @@ console.log("Webpack is working!")
 
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
-  let otherCar = document.getElementById("other-cars")
+  let otherCar1 = document.getElementById("other-car-1")
+  let otherCar2 = document.getElementById("other-car-2")
+  let otherCar3 = document.getElementById("other-car-3")
+  let otherCar4 = document.getElementById("other-car-4")
+  let otherCar5 = document.getElementById("other-car-5")
+
   let car = document.getElementById("car")
 
   // otherCar.addEventListener('animationiteration', () => {
@@ -12,9 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // })
 
   function jump() {
-    car.classList.toggle("animate");
+    if (car.classList != "animate") {
+      car.classList.add("animate");
+    }
     setTimeout(function(){
-      car.classList.toggle("animate")
+      car.classList.remove("animate")
     }, 500)
   }
 
@@ -46,5 +53,77 @@ document.addEventListener("DOMContentLoaded", () => {
         jump();
       }
     });
+
+    // otherCar1.addEventListener('animationiteration', () => {
+    //   let random = Math.floor(Math.random() * 4)
+    //   if (random === 0) {
+    //     random = 1;
+    //   }
+    //   otherCar1.style.animation = `slide1 ${random}s infinite`;
+    // })
+
+    // otherCar2.addEventListener('animationiteration', () => {
+    //   let random = Math.floor(Math.random() * 4)
+    //   if (random === 0) {
+    //     random = 1;
+    //   }
+    //   otherCar2.style.animation = `slide2 ${random}s infinite`;
+    // })
+
+    // otherCar3.addEventListener('animationiteration', () => {
+    //   let random = Math.floor(Math.random() * 4)
+    //   if (random === 0) {
+    //     random = 1;
+    //   }
+    //   otherCar3.style.animation = `slide3 ${random}s infinite`;
+    // })
+
+    // otherCar4.addEventListener('animationiteration', () => {
+    //   let random = Math.floor(Math.random() * 4)
+    //   if (random === 0) {
+    //     random = 1;
+    //   }
+    //   otherCar4.style.animation = `slide4 ${random}s infinite`;
+    // })
+
+    // otherCar5.addEventListener('animationiteration', () => {
+    //   let random = Math.floor(Math.random() * 4)
+    //   if (random === 0) {
+    //     random = 1;
+    //   }
+    //   otherCar5.style.animation = `slide5 ${random}s infinite`;
+    // })
+
+    setInterval(() => {
+      let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
+      let carTop = parseInt(window.getComputedStyle(car).getPropertyValue("top"))
+
+      // let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
+      // let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
+      // let car3Left = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("left"))
+      // let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
+      // let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
+
+      let car1Top = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("top"))
+      let car2Top = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("top"))
+      let car3Top = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("top"))
+      let car4Top = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("top"))
+      let car5Top = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("top"))
+
+      if (
+        (carTop === car1Top) || 
+        (carTop === car2Top) ||
+        (carTop === car3Top) ||
+        (carTop === car4Top) ||
+        (carTop === car5Top)) {
+          alert("You crashed! Game over.");
+          car.style.animation = "none";
+          otherCar1.style.animation = "none";
+          otherCar2.style.animation = "none";
+          otherCar3.style.animation = "none";
+          otherCar4.style.animation = "none";
+          otherCar5.style.animation = "none";
+      }
+    }, 1);
   })
 })

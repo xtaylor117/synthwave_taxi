@@ -9,6 +9,7 @@ body {
     height: 640px;
     background-image: url(./assets/Synthwave-taxi-bg.png);
     border-radius: 5px;
+    overflow: hidden;
 }
 
 #road {
@@ -33,8 +34,8 @@ body {
 
 @keyframes jump {
     0%{top: 515px;}
-    30%{top: 425px;}
-    70%{top: 425px;}
+    40%{top: 415px;}
+    60%{top: 415px;}
     100%{top: 515px;}
 }
 
@@ -43,19 +44,24 @@ body {
     height: 10px;
     background: red;
     position: absolute;
-    top: 40%;
+    top: 256px;
     left: 281px;
-    animation: slide1 1.5s infinite linear;
+    animation: slide1 2s infinite linear;
 }
 
 @keyframes slide1 {
     0% {
         transform: translatex(0px) translatey(0px)
     }
-    100% {
-        transform: translatex(-175px) translatey(280px);
+    80% {
+        transform: translatex(-166px) translatey(259px);
         width: 50px;
         height: 100px;
+    }
+    100% {
+        width: 50px;
+        height: 100px;
+        transform: translatex(-200px) translatey(400px);
     }
 }
 
@@ -64,17 +70,22 @@ body {
     height: 10px;
     background: red;
     position: absolute;
-    top: 40%;
+    top: 256px;
     left: 298px;
-    animation: slide2 1.5s infinite linear;
+    animation: slide2 2s infinite linear;
 }
 
 @keyframes slide2 {
     0% {
         transform: translatex(0px) translatey(0px)
     }
+    80% {
+        transform: translatex(-93px) translatey(259px);
+        width: 50px;
+        height: 100px;
+    }
     100% {
-        transform: translatex(-100px) translatey(280px);
+        transform: translatex(-110px) translatey(400px);
         width: 50px;
         height: 100px;
     }
@@ -85,17 +96,22 @@ body {
     height: 10px;
     background: red;
     position: absolute;
-    top: 40%;
+    top: 256px;
     left: 315px;
-    animation: slide3 1.5s infinite linear;
+    animation: slide3 2s infinite linear;
 }
 
 @keyframes slide3 {
     0% {
         transform: translatex(0px) translatey(0px)
     }
+    80% {
+        transform: translatex(-20px) translatey(259px);
+        width: 50px;
+        height: 100px;
+    }
     100% {
-        transform: translatex(-20px) translatey(280px);
+        transform: translatex(-20px) translatey(400px);
         width: 50px;
         height: 100px;
     }
@@ -106,17 +122,22 @@ body {
     height: 10px;
     background: red;
     position: absolute;
-    top: 40%;
+    top: 256px;
     left: 332px;
-    animation: slide4 1.5s infinite linear;
+    animation: slide4 2s infinite linear;
 }
 
 @keyframes slide4 {
     0% {
         transform: translatex(0px) translatey(0px)
     }
+    80% {
+        transform: translatex(53px) translatey(259px);
+        width: 50px;
+        height: 100px;
+    }
     100% {
-        transform: translatex(50px) translatey(280px);
+        transform: translatex(80px) translatey(400px);
         width: 50px;
         height: 100px;
     }
@@ -127,17 +148,22 @@ body {
     height: 10px;
     background: red;
     position: absolute;
-    top: 40%;
+    top: 256px;
     left: 349px;
-    animation: slide5 1.5s infinite linear;
+    animation: slide5 2s infinite linear;
 }
 
 @keyframes slide5 {
     0% {
         transform: translatex(0px) translatey(0px)
     }
+    80% {
+        transform: translatex(126px) translatey(259px);
+        width: 50px;
+        height: 100px;
+    }
     100% {
-        transform: translatex(125px) translatey(280px);
+        transform: translatex(160px) translatey(400px);
         width: 50px;
         height: 100px;
     }
