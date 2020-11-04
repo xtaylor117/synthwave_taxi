@@ -24,28 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     drawCar();
     if(rightPressed) {
       x += 7;
-      if (x + 15 > canvas.width) {
-        x = canvas.width - 15;
+      if (x + 15 > canvas.width - 70) {
+        x = canvas.width - 70;
       }
     } else if(leftPressed) {
       x -= 7;
-      if (x < 0) {
-        x = 0;
+      if (x < 55) {
+        x = 55;
       }
     }
   }
-
-  // function moveLeft() {
-  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //   drawCar();
-  //   x -= 2;
-  // }
-
-  // function moveRight() {
-  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //   drawCar();
-  //   x += 2;
-  // }
 
   function keyDownHandler(e) {
       if(e.key == "Right" || e.key == "ArrowRight") {
