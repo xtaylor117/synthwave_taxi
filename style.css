@@ -47,7 +47,7 @@ body {
     /* top: 256px; */
     bottom: 374px;
     left: 281px;
-    animation: slide1 2s infinite linear;
+    /* animation: slide1 3s infinite linear; */
 }
 
 @keyframes slide1 {
@@ -55,7 +55,7 @@ body {
         bottom: 374px;
     }
     80% {
-        transform: translatex(-166px);
+        left: 115px;
         bottom: 25px;
         width: 50px;
         height: 100px;
@@ -63,7 +63,8 @@ body {
     100% {
         width: 50px;
         height: 100px;
-        transform: translatex(-200px) translatey(500px);
+        left: 115px;
+        bottom: -150px;
     }
 }
 
@@ -74,7 +75,7 @@ body {
     position: absolute;
     bottom: 374px;
     left: 298px;
-    animation: slide2 2s infinite linear;
+    /* animation: slide2 3s infinite linear; */
 }
 
 @keyframes slide2 {
@@ -82,13 +83,14 @@ body {
         bottom: 374px;
     }
     80% {
-        transform: translatex(-93px);
+        left: 205px;
         bottom: 25px;
         width: 50px;
         height: 100px;
     }
     100% {
-        transform: translatex(-110px) translatey(500px);
+        left: 205px;
+        bottom: -150px;
         width: 50px;
         height: 100px;
     }
@@ -101,20 +103,22 @@ body {
     position: absolute;
     bottom: 374px;
     left: 315px;
-    animation: slide3 2s infinite linear;
+    /* animation: slide3 3s infinite linear; */
 }
 
 @keyframes slide3 {
     0% {
-        transform: translatex(0px) translatey(0px)
+        bottom: 374px;
     }
     80% {
-        transform: translatex(-20px) translatey(349px);
+        left: 295px;
+        bottom: 25px;
         width: 50px;
         height: 100px;
     }
     100% {
-        transform: translatex(-20px) translatey(500px);
+        left: 295px;
+        bottom: -150px;
         width: 50px;
         height: 100px;
     }
@@ -127,20 +131,22 @@ body {
     position: absolute;
     bottom: 374px;
     left: 332px;
-    animation: slide4 2s infinite linear;
+    /* animation: slide4 3s infinite linear; */
 }
 
 @keyframes slide4 {
     0% {
-        transform: translatex(0px) translatey(0px)
+        bottom: 374px;
     }
     80% {
-        transform: translatex(53px) translatey(349px);
+        left: 385px;
+        bottom: 25px;
         width: 50px;
         height: 100px;
     }
     100% {
-        transform: translatex(80px) translatey(500px);
+        left: 385px;
+        bottom: -150px;
         width: 50px;
         height: 100px;
     }
@@ -153,20 +159,22 @@ body {
     position: absolute;
     bottom: 374px;
     left: 349px;
-    animation: slide5 2s infinite linear;
+    /* animation: slide5 3s infinite linear; */
 }
 
 @keyframes slide5 {
     0% {
-        transform: translatex(0px) translatey(0px)
+        bottom: 374px;
     }
     80% {
-        transform: translatex(126px) translatey(349px);
+        left: 475px;
+        bottom: 25px;
         width: 50px;
         height: 100px;
     }
     100% {
-        transform: translatex(160px) translatey(500px);
+        left: 475px;
+        bottom: -150px;
         width: 50px;
         height: 100px;
     }
