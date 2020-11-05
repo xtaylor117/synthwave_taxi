@@ -42,9 +42,8 @@ body {
 #other-car-1 {
     width: 10px;
     height: 10px;
-    background: red;
+    background: yellow;
     position: absolute;
-    /* top: 256px; */
     bottom: 374px;
     left: 281px;
     /* animation: slide1 3s infinite linear; */
@@ -71,7 +70,7 @@ body {
 #other-car-2 {
     width: 10px;
     height: 10px;
-    background: red;
+    background: yellow;
     position: absolute;
     bottom: 374px;
     left: 298px;
@@ -99,7 +98,7 @@ body {
 #other-car-3 {
     width: 10px;
     height: 10px;
-    background: red;
+    background: yellow;
     position: absolute;
     bottom: 374px;
     left: 315px;
@@ -127,7 +126,7 @@ body {
 #other-car-4 {
     width: 10px;
     height: 10px;
-    background: red;
+    background: yellow;
     position: absolute;
     bottom: 374px;
     left: 332px;
@@ -155,7 +154,7 @@ body {
 #other-car-5 {
     width: 10px;
     height: 10px;
-    background: red;
+    background: yellow;
     position: absolute;
     bottom: 374px;
     left: 349px;

@@ -92,30 +92,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s infinite linear`
-    otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s infinite linear`
-    otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s infinite linear`
-    otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s infinite linear`
-    otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s infinite linear`
+    otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s linear infinite`
+    otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s linear infinite`
+    otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s linear infinite`
+    otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s linear infinite`
+    otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s linear infinite`
 
     otherCar1.addEventListener('animationiteration', () => {
-      otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s infinite linear`;
+      otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s linear infinite`;
     })
 
     otherCar2.addEventListener('animationiteration', () => {
-      otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s infinite linear`;
+      otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s linear infinite`;
     })
 
     otherCar3.addEventListener('animationiteration', () => {
-      otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s infinite linear`;
+      otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s linear infinite`;
     })
 
     otherCar4.addEventListener('animationiteration', () => {
-      otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s infinite linear`;
+      otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s linear infinite`;
     })
 
     otherCar5.addEventListener('animationiteration', () => {
-      otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s infinite linear`;
+      otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s linear infinite`;
     })
 
     setInterval(() => {
