@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro-container").classList.add("hidden");
     document.addEventListener("keydown", e => {
       if(e.key == "Right" || e.key == "ArrowRight") {
-        debugger
         if(car.classList.contains("lane3")) {
           car.classList.remove("lane3")
           car.classList.add("lane4")

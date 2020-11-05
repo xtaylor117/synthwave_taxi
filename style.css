@@ -20,9 +20,9 @@ body {
 }
 
 #car {
-    width: 50px;
+    /* width: 50px; */
     height: 100px;
-    background: white;
+    /* background: white; */
     position: absolute;
     bottom: 25px;
     left: 295px;
@@ -231,3 +231,37 @@ body {
     border: 1px solid black;
 }
 
+.lane1 {
+    width: 75px;
+    background: transparent;
+    background-image: url('./assets/lane1.png');
+    background-position: center;
+}
+
+.lane2 {
+    width: 50px;
+    background: transparent;
+    background-image: url('./assets/lane2.png');
+    background-position: center;
+}
+
+.lane3 {
+    width: 50px;
+    background: transparent;
+    background-image: url('./assets/lane3.png');
+    background-position: center;
+}
+
+.lane4 {
+    width: 50px;
+    background: transparent;
+    background-image: url('./assets/lane4.png');
+    background-position: center;
+}
+
+.lane5 {
+    width:60px;
+    background: transparent;
+    background-image: url('./assets/lane5.png');
+    background-position: center;
+}
