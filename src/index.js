@@ -51,44 +51,72 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro-container").classList.add("hidden");
     document.addEventListener("keydown", e => {
       if(e.key == "Right" || e.key == "ArrowRight") {
-        moveRight();
+        debugger
+        if(car.classList.contains("lane3")) {
+          car.classList.remove("lane3")
+          car.classList.add("lane4")
+          moveRight();
+        } else if (car.classList.contains("lane4")) {
+          car.classList.remove("lane4")
+          car.classList.add("lane5")
+          moveRight();
+        } else if (car.classList.contains("lane1")) {
+          car.classList.remove("lane1")
+          car.classList.add("lane2")
+          moveRight();
+        } else if (car.classList.contains("lane2")) {
+          car.classList.remove("lane2")
+          car.classList.add("lane3")
+          moveRight();
+        }
       }
       else if(e.key == "Left" || e.key == "ArrowLeft") {
-        moveLeft();
+        if(car.classList.contains("lane3")) {
+          car.classList.remove("lane3")
+          car.classList.add("lane2")
+          moveLeft();
+        } else if (car.classList.contains("lane4")) {
+          car.classList.remove("lane4")
+          car.classList.add("lane3")
+          moveLeft();
+        } else if (car.classList.contains("lane2")) {
+          car.classList.remove("lane2")
+          car.classList.add("lane1")
+          moveLeft();
+        } else if (car.classList.contains("lane5")) {
+          car.classList.remove("lane5")
+          car.classList.add("lane4")
+          moveLeft();
+        }
       } else if (e.keyCode == 32) {
         jump();
       }
     });
 
-    otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s infinite linear`
-    otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s infinite linear`
-    otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s infinite linear`
-    otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s infinite linear`
-    otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s infinite linear`
+    otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s infinite linear`
+    otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s infinite linear`
+    otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s infinite linear`
+    otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s infinite linear`
+    otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s infinite linear`
 
     otherCar1.addEventListener('animationiteration', () => {
-      let random1 = getRandomInt(2, 5)
-      otherCar1.style.animation = `slide1 ${random1}s infinite linear`;
+      otherCar1.style.animation = `slide1 ${getRandomInt(1, 5)}s infinite linear`;
     })
 
     otherCar2.addEventListener('animationiteration', () => {
-      let random2 = getRandomInt(2, 5)
-      otherCar2.style.animation = `slide2 ${random2}s infinite linear`;
+      otherCar2.style.animation = `slide2 ${getRandomInt(1, 5)}s infinite linear`;
     })
 
     otherCar3.addEventListener('animationiteration', () => {
-      let random3 = getRandomInt(2, 5)
-      otherCar3.style.animation = `slide3 ${random3}s infinite linear`;
+      otherCar3.style.animation = `slide3 ${getRandomInt(1, 5)}s infinite linear`;
     })
 
     otherCar4.addEventListener('animationiteration', () => {
-      let random4 = getRandomInt(2, 5)
-      otherCar4.style.animation = `slide4 ${random4}s infinite linear`;
+      otherCar4.style.animation = `slide4 ${getRandomInt(1, 5)}s infinite linear`;
     })
 
     otherCar5.addEventListener('animationiteration', () => {
-      let random5 = getRandomInt(2, 5)
-      otherCar5.style.animation = `slide5 ${random5}s infinite linear`;
+      otherCar5.style.animation = `slide5 ${getRandomInt(1, 5)}s infinite linear`;
     })
 
     setInterval(() => {
@@ -108,11 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
       let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
       if (
-        (carLeft === car1Left && carBottom === car1Bottom) || 
-        (carLeft === car2Left && carBottom === car2Bottom) ||
-        (carLeft === car3Left && carBottom === car3Bottom) ||
-        (carLeft === car4Left && carBottom === car4Bottom) ||
-        (carLeft === car5Left && carBottom === car5Bottom)) {
+        (carLeft == car1Left && carBottom == car1Bottom) || 
+        (carLeft == car2Left && carBottom == car2Bottom) ||
+        (carLeft == car3Left && carBottom == car3Bottom) ||
+        (carLeft == car4Left && carBottom == car4Bottom) ||
+        (carLeft == car5Left && carBottom == car5Bottom)) {
           alert("You crashed! Game over.");
           car.style.animation = "none";
           otherCar1.style.animation = "none";
