@@ -1,4 +1,4 @@
-console.log("Webpack is working!")
+// console.log("Webpack is working!")
 
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let otherCar5 = document.getElementById("other-car-5")
 
   let car = document.getElementById("car")
-
-  // otherCar.addEventListener('animationiteration', () => {
-  //   let random = Math.floor(Math.random() * 5)
-  //   let left = random * 10;
-  //   otherCar.style.left = 181 + left + "px"
-  // })
 
   function jump() {
     if (car.classList != "animate") {
@@ -98,25 +92,25 @@ document.addEventListener("DOMContentLoaded", () => {
     otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`
     otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`
 
-    // otherCar1.addEventListener('animationiteration', () => {
-    //   otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar1.addEventListener('animationiteration', () => {
+      otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
-    // otherCar2.addEventListener('animationiteration', () => {
-    //   otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar2.addEventListener('animationiteration', () => {
+      otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
-    // otherCar3.addEventListener('animationiteration', () => {
-    //   otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar3.addEventListener('animationiteration', () => {
+      otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
-    // otherCar4.addEventListener('animationiteration', () => {
-    //   otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar4.addEventListener('animationiteration', () => {
+      otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
-    // otherCar5.addEventListener('animationiteration', () => {
-    //   otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar5.addEventListener('animationiteration', () => {
+      otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
     setInterval(() => {
       let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
