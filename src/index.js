@@ -42,8 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
+  function keyRelease(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+      document.getElementById('D').classList.remove('pressed')
+    } else if(e.key == "Left" || e.key == "ArrowLeft") {
+      document.getElementById('A').classList.remove('pressed')
+    } else if (e.key === ' ' || e.key === 'Spacebar') {
+      document.getElementById('space').classList.remove('pressed')
+    }
+  }
+
   function keyPress(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
+      document.getElementById('D').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
         car.classList.add("lane4")
@@ -62,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         moveRight();
       }
     } else if(e.key == "Left" || e.key == "ArrowLeft") {
+      document.getElementById('A').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
         car.classList.add("lane2")
@@ -80,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         moveLeft();
       }
     } else if (e.key === ' ' || e.key === 'Spacebar') {
+      document.getElementById('space').classList.add('pressed')
       jump();
     }
   }
@@ -92,10 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("intro-container").classList.add("hidden");
 
-    // document.addEventListener("keyup", e => {
-
-    // })
-    
+    document.addEventListener("keyup", keyRelease);
     document.addEventListener("keydown", keyPress);
     
     otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`

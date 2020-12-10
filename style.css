@@ -206,7 +206,7 @@ body {
 }
 
 #again {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Permanent Marker;
     font-size: 20px;
     color: white;
 }
@@ -437,6 +437,10 @@ body {
     border-radius: 5px;
     width: 65%;
     text-align: center;
+}
+
+.pressed {
+    background: white;
 }
 
 #jump {
