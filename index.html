@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthwave Taxi</title>
+    <meta property="og:title" content="Synthwave Taxi" />
+    <meta property='og:image' content="<%= image_url(./assets/synthwave-taxi-bg.png) %>" />
+    <meta property="og:description"
+        content="An 80's synthwave inspired driving game where you try to avoid other cars
+                    by jumping over them or swapping lanes. Ride into the sunset, don't crash, and enjoy the synthwave." />
+    <meta property="og:url" content="https://xtaylor117.github.io/synthwave_taxi/" />
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="./dist/main.js"></script>
     <link rel="stylesheet" href="./style.css" type="text/css">
     <title> Synthwave Taxi </title>
 </head>
 <body>
     <!-- <canvas id="game-canvas"></canvas> -->
+    <div id="left-side">
+        <h1 id="controls-header"><i class="far fa-keyboard"></i></h1>
+        <div id="switches">
+            <p id="switch-left">Move Left</p>
+            <p id="switch-right">Move Right</p>
+        </div>
+        <div id="keys">
+            <p id="A">A</p>
+            <p id="D">D</p>
+        </div>
+        <div id="space-mech">
+            <p id="jump">Jump</p>
+            <p id="space">SPACE</p>
+        </div>
+        <div id="links-container">
+            <a href="https://github.com/xtaylor117" target="_blank" rel="noreferrer"><i class="fab fa-github-square"></i></a>
+            <a href="https://angel.co/u/taylor-lee-18" target="_blank" rel="noreferrer"><i class="fab fa-angellist"></i></a>
+            <a href="https://www.linkedin.com/in/taylorlee117/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <div id="right-side">
+    
+    </div>
+
     <div id="intro-container">
         <div id="instructions">
             <h1 class="game-title">Synthwave Taxi</h1>
             <div id="about-game">
                 <p><span id="inline-bold-text">Synthwave Taxi</span> is an 80's synthwave inspired driving game where you try to avoid other cars
-                    by jumping over them or swapping lanes. Ride into the sunset, dont' crash, and enjoy the synthwave.
+                    by jumping over them or swapping lanes. Ride into the sunset, don't crash, and enjoy the synthwave.
                 </p>
     
                 <div id="game-instruction">

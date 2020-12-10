@@ -112,22 +112,28 @@ document.addEventListener("DOMContentLoaded", () => {
       otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
+    let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
+    let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
+
+    let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
+    let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
+    let car3Left = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("left"))
+    let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
+    let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
+
+    let car1Bottom = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("bottom"))
+    let car2Bottom = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("bottom"))
+    let car3Bottom = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("bottom"))
+    let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
+    let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
+
+    console.log('carleft', carLeft)
+    console.log('car4left', car4Left)
+
+    console.log('carbottom', carBottom)
+    console.log('car4bottom',car4Bottom)
+
     setInterval(() => {
-      let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
-      let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
-
-      let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
-      let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
-      let car3Left = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("left"))
-      let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
-      let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
-
-      let car1Bottom = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("bottom"))
-      let car2Bottom = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("bottom"))
-      let car3Bottom = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("bottom"))
-      let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
-      let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
-
       if (
         (carLeft == car1Left && carBottom == car1Bottom) || 
         (carLeft == car2Left && carBottom == car2Bottom) ||
