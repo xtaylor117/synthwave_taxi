@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let otherCar5 = document.getElementById("other-car-5")
 
   let car = document.getElementById("car")
+  let restart = document.getElementById("restart-game")
 
   function jump() {
     if (car.classList != "animate") {
@@ -42,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startButton.addEventListener("click", () => { 
+  
+    if (!restart.classList.contains('hidden')) {
+      restart.classList.toggle("hidden")
+    }
+
     document.getElementById("intro-container").classList.add("hidden");
     document.addEventListener("keydown", e => {
       if(e.key == "Right" || e.key == "ArrowRight") {
@@ -63,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
           moveRight();
         }
       }
+      
       else if(e.key == "Left" || e.key == "ArrowLeft") {
         if(car.classList.contains("lane3")) {
           car.classList.remove("lane3")
@@ -140,13 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car3Left && carBottom == car3Bottom) ||
         (carLeft == car4Left && carBottom == car4Bottom) ||
         (carLeft == car5Left && carBottom == car5Bottom)) {
-          alert("You crashed! Game over.");
           car.style.animation = "none";
           otherCar1.style.animation = "none";
           otherCar2.style.animation = "none";
           otherCar3.style.animation = "none";
           otherCar4.style.animation = "none";
           otherCar5.style.animation = "none";
+          restart.classList.toggle("hidden")
       }
     }, 1);
   })

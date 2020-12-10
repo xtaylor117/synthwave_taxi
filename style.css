@@ -265,12 +265,12 @@ body {
 
 #links-container {
     position: fixed;
-    bottom: 0px;
+    top: 0px;
     height: fit-content;
     width: fit-content;
     background: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 10px;
 }
 
@@ -301,7 +301,7 @@ body {
     width: 23%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px red;
+    box-shadow: 0px 0px 10px gold;
 }
 
 
@@ -315,7 +315,7 @@ body {
     width: 23%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px red;
+    box-shadow: 0px 0px 10px gold;
 }
 
 #controls-header {
