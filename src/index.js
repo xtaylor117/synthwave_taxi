@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
+  let restartButton = document.getElementById("restart-button")
   let otherCar1 = document.getElementById("other-car-1")
   let otherCar2 = document.getElementById("other-car-2")
   let otherCar3 = document.getElementById("other-car-3")
@@ -41,8 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
-  startButton.addEventListener("click", () => { 
-  
+  function startGame() {
     if (!document.getElementById("restart-game").classList.contains('hidden')) {
       document.getElementById("restart-game").classList.toggle("hidden")
     }
@@ -153,8 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
           otherCar3.style.animation = "none";
           otherCar4.style.animation = "none";
           otherCar5.style.animation = "none";
-          // document.getElementById("restart-game").classList.toggle("hidden")
+          document.getElementById("restart-game").classList.toggle("hidden")
       }
     }, 1);
+  }
+  
+  startButton.addEventListener("click", () => { 
+    startGame();
+  })
+
+  restartButton.addEventListener("click", () => {
+    startGame();
   })
 })
