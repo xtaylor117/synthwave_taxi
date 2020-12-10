@@ -96,49 +96,50 @@ document.addEventListener("DOMContentLoaded", () => {
         jump();
       }
     });
-
+    
     otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`
     otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`
     otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`
     otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`
     otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`
 
-    otherCar1.addEventListener('animatioiteration', () => {
-      otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
-    })
+    // otherCar1.addEventListener('animationiteration', () => {
+    //   otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
+    // })
 
-    otherCar2.addEventListener('animatioiteration', () => {
-      otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
-    })
+    // otherCar2.addEventListener('animationiteration', () => {
+    //   otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
+    // })
 
-    otherCar3.addEventListener('animatioiteration', () => {
-      otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
-    })
+    // otherCar3.addEventListener('animationiteration', () => {
+    //   otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
+    // })
 
-    otherCar4.addEventListener('animatioiteration', () => {
-      otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
-    })
+    // otherCar4.addEventListener('animationiteration', () => {
+    //   otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
+    // })
 
-    otherCar5.addEventListener('animatioiteration', () => {
-      otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
-    })
+    // otherCar5.addEventListener('animationiteration', () => {
+    //   otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
+    // })
 
-    let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
-    let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
-
-    let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
-    let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
-    let car3Left = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("left"))
-    let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
-    let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
-
-    let car1Bottom = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("bottom"))
-    let car2Bottom = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("bottom"))
-    let car3Bottom = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("bottom"))
-    let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
-    let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
     setInterval(() => {
+      let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
+      let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
+
+      let car1Left = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("left"))
+      let car2Left = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("left"))
+      let car3Left = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("left"))
+      let car4Left = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("left"))
+      let car5Left = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("left"))
+
+      let car1Bottom = parseInt(window.getComputedStyle(otherCar1).getPropertyValue("bottom"))
+      let car2Bottom = parseInt(window.getComputedStyle(otherCar2).getPropertyValue("bottom"))
+      let car3Bottom = parseInt(window.getComputedStyle(otherCar3).getPropertyValue("bottom"))
+      let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
+      let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
+
       if (
         (carLeft == car1Left && carBottom == car1Bottom) || 
         (carLeft == car2Left && carBottom == car2Bottom) ||
@@ -152,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
           otherCar3.style.animation = "none";
           otherCar4.style.animation = "none";
           otherCar5.style.animation = "none";
-          document.getElementById("restart-game").classList.toggle("hidden")
+          // document.getElementById("restart-game").classList.toggle("hidden")
       }
     }, 1);
   })
