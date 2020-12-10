@@ -42,7 +42,50 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
+  function keyPress(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+      if(car.classList.contains("lane3")) {
+        car.classList.remove("lane3")
+        car.classList.add("lane4")
+        moveRight();
+      } else if (car.classList.contains("lane4")) {
+        car.classList.remove("lane4")
+        car.classList.add("lane5")
+        moveRight();
+      } else if (car.classList.contains("lane1")) {
+        car.classList.remove("lane1")
+        car.classList.add("lane2")
+        moveRight();
+      } else if (car.classList.contains("lane2")) {
+        car.classList.remove("lane2")
+        car.classList.add("lane3")
+        moveRight();
+      }
+    } else if(e.key == "Left" || e.key == "ArrowLeft") {
+      if(car.classList.contains("lane3")) {
+        car.classList.remove("lane3")
+        car.classList.add("lane2")
+        moveLeft();
+      } else if (car.classList.contains("lane4")) {
+        car.classList.remove("lane4")
+        car.classList.add("lane3")
+        moveLeft();
+      } else if (car.classList.contains("lane2")) {
+        car.classList.remove("lane2")
+        car.classList.add("lane1")
+        moveLeft();
+      } else if (car.classList.contains("lane5")) {
+        car.classList.remove("lane5")
+        car.classList.add("lane4")
+        moveLeft();
+      }
+    } else if (e.key === ' ' || e.key === 'Spacebar') {
+      jump();
+    }
+  }
+
   function startGame() {
+    window.localStorage.setItem('counter', '0')
     if (!document.getElementById("restart-game").classList.contains('hidden')) {
       document.getElementById("restart-game").classList.toggle("hidden")
     }
@@ -53,49 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // })
     
-    document.addEventListener("keydown", e => {
-      if(e.key == "Right" || e.key == "ArrowRight") {
-        if(car.classList.contains("lane3")) {
-          car.classList.remove("lane3")
-          car.classList.add("lane4")
-          moveRight();
-        } else if (car.classList.contains("lane4")) {
-          car.classList.remove("lane4")
-          car.classList.add("lane5")
-          moveRight();
-        } else if (car.classList.contains("lane1")) {
-          car.classList.remove("lane1")
-          car.classList.add("lane2")
-          moveRight();
-        } else if (car.classList.contains("lane2")) {
-          car.classList.remove("lane2")
-          car.classList.add("lane3")
-          moveRight();
-        }
-      }
-      
-      else if(e.key == "Left" || e.key == "ArrowLeft") {
-        if(car.classList.contains("lane3")) {
-          car.classList.remove("lane3")
-          car.classList.add("lane2")
-          moveLeft();
-        } else if (car.classList.contains("lane4")) {
-          car.classList.remove("lane4")
-          car.classList.add("lane3")
-          moveLeft();
-        } else if (car.classList.contains("lane2")) {
-          car.classList.remove("lane2")
-          car.classList.add("lane1")
-          moveLeft();
-        } else if (car.classList.contains("lane5")) {
-          car.classList.remove("lane5")
-          car.classList.add("lane4")
-          moveLeft();
-        }
-      } else if (e.keyCode == 32) {
-        jump();
-      }
-    });
+    document.addEventListener("keydown", keyPress);
     
     otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`
     otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`
@@ -122,9 +123,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // otherCar5.addEventListener('animationiteration', () => {
     //   otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
     // })
+    
+
+    let scoreTimer = setInterval(() => {
+      let next = parseInt(window.localStorage.counter) + 1
+      window.localStorage.setItem('counter', `${next}`)
+      document.getElementById('score').innerText = `${next * 100}`
+    }, 1000)
 
 
-    setInterval(() => {
+    let collision = setInterval(() => {
       let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
       let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
 
@@ -146,23 +154,26 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car3Left && carBottom == car3Bottom) ||
         (carLeft == car4Left && carBottom == car4Bottom) ||
         (carLeft == car5Left && carBottom == car5Bottom)) {
-          alert("You crashed! Game over.");
           car.style.animation = "none";
+          clearInterval(scoreTimer);
           otherCar1.style.animation = "none";
           otherCar2.style.animation = "none";
           otherCar3.style.animation = "none";
           otherCar4.style.animation = "none";
           otherCar5.style.animation = "none";
+          document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
+          window.localStorage.setItem('counter', '0')
           document.getElementById("restart-game").classList.toggle("hidden")
       }
     }, 1);
   }
-  
+
   startButton.addEventListener("click", () => { 
     startGame();
   })
 
   restartButton.addEventListener("click", () => {
+    document.removeEventListener("keydown", keyPress)
     startGame();
   })
 })
