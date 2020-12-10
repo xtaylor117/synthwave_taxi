@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let otherCar5 = document.getElementById("other-car-5")
 
   let car = document.getElementById("car")
-  let restart = document.getElementById("restart-game")
 
   function jump() {
     if (car.classList != "animate") {
@@ -44,11 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startButton.addEventListener("click", () => { 
   
-    if (!restart.classList.contains('hidden')) {
-      restart.classList.toggle("hidden")
+    if (!document.getElementById("restart-game").classList.contains('hidden')) {
+      document.getElementById("restart-game").classList.toggle("hidden")
     }
 
     document.getElementById("intro-container").classList.add("hidden");
+
+    // document.addEventListener("keyup", e => {
+
+    // })
+    
     document.addEventListener("keydown", e => {
       if(e.key == "Right" || e.key == "ArrowRight") {
         if(car.classList.contains("lane3")) {
@@ -99,23 +103,23 @@ document.addEventListener("DOMContentLoaded", () => {
     otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`
     otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`
 
-    otherCar1.addEventListener('animationiteration', () => {
+    otherCar1.addEventListener('animatioiteration', () => {
       otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
-    otherCar2.addEventListener('animationiteration', () => {
+    otherCar2.addEventListener('animatioiteration', () => {
       otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
-    otherCar3.addEventListener('animationiteration', () => {
+    otherCar3.addEventListener('animatioiteration', () => {
       otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
-    otherCar4.addEventListener('animationiteration', () => {
+    otherCar4.addEventListener('animatioiteration', () => {
       otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
-    otherCar5.addEventListener('animationiteration', () => {
+    otherCar5.addEventListener('animatioiteration', () => {
       otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
     })
 
@@ -134,12 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
     let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
-    console.log('carleft', carLeft)
-    console.log('car4left', car4Left)
-
-    console.log('carbottom', carBottom)
-    console.log('car4bottom',car4Bottom)
-
     setInterval(() => {
       if (
         (carLeft == car1Left && carBottom == car1Bottom) || 
@@ -147,13 +145,14 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car3Left && carBottom == car3Bottom) ||
         (carLeft == car4Left && carBottom == car4Bottom) ||
         (carLeft == car5Left && carBottom == car5Bottom)) {
+          alert("You crashed! Game over.");
           car.style.animation = "none";
           otherCar1.style.animation = "none";
           otherCar2.style.animation = "none";
           otherCar3.style.animation = "none";
           otherCar4.style.animation = "none";
           otherCar5.style.animation = "none";
-          restart.classList.toggle("hidden")
+          document.getElementById("restart-game").classList.toggle("hidden")
       }
     }, 1);
   })

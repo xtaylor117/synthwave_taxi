@@ -24,6 +24,7 @@ body {
     position: absolute;
     bottom: 25px;
     left: 295px;
+    background: rgba(255, 255, 255, 0.23);
 }
 
 .animate {
@@ -44,7 +45,6 @@ body {
     position: absolute;
     bottom: 374px;
     left: 281px;
-    /* animation: slide1 3s infinite linear; */
 }
 
 @keyframes slide1 {
@@ -72,7 +72,6 @@ body {
     position: absolute;
     bottom: 374px;
     left: 298px;
-    /* animation: slide2 3s infinite linear; */
 }
 
 @keyframes slide2 {
@@ -100,7 +99,6 @@ body {
     position: absolute;
     bottom: 374px;
     left: 315px;
-    /* animation: slide3 3s infinite linear; */
 }
 
 @keyframes slide3 {
@@ -128,7 +126,6 @@ body {
     position: absolute;
     bottom: 374px;
     left: 332px;
-    /* animation: slide4 3s infinite linear; */
 }
 
 @keyframes slide4 {
@@ -156,7 +153,6 @@ body {
     position: absolute;
     bottom: 374px;
     left: 349px;
-    /* animation: slide5 3s infinite linear; */
 }
 
 @keyframes slide5 {
@@ -178,6 +174,16 @@ body {
 }
 
 #intro-container {
+    z-index: 900;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background: rgba(111, 23, 242, 0.405);
+}
+
+#restart-game {
     z-index: 900;
     position: fixed;
     top: 0%;
