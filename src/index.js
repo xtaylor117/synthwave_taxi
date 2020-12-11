@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let otherCar3 = document.getElementById("other-car-3")
   let otherCar4 = document.getElementById("other-car-4")
   let otherCar5 = document.getElementById("other-car-5")
+  let song = document.getElementById("audio")
+  let playPause = document.getElementById("play-pause")
+  let mute = document.getElementById("mute")
 
   let car = document.getElementById("car")
 
@@ -98,6 +101,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startGame() {
+    song.volume = 0.7;
+    song.play();
+
+    playPause.addEventListener("click", () => {
+      if (playPause.classList.contains('pause')) {
+        playPause.classList.remove('pause')
+        playPause.classList.add('play')
+        playPause.innerHTML = '<i class="far fa-play-circle"></i>'
+        song.pause();
+      } else {
+        playPause.classList.remove('play')
+        playPause.classList.add('pause')
+        playPause.innerHTML = '<i class="far fa-pause-circle"></i>'
+        song.play();
+      }
+    })
+    
+    mute.addEventListener("click", () => {
+      if (mute.classList.contains('muted')) {
+        mute.classList.remove('muted')
+        song.volume = 0.7;
+        mute.innerHTML = '<i class="fas fa-volume-up"></i>'
+      } else {
+        mute.classList.add('muted')
+        song.volume = 0;
+        mute.innerHTML = '<i class="fas fa-volume-mute"></i>'
+      }
+    })
+
     window.localStorage.setItem('counter', '0')
     if (!document.getElementById("restart-game").classList.contains('hidden')) {
       document.getElementById("restart-game").classList.toggle("hidden")
@@ -158,23 +190,24 @@ document.addEventListener("DOMContentLoaded", () => {
       let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
       let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
-      if (
-        (carLeft == car1Left && carBottom == car1Bottom) || 
-        (carLeft == car2Left && carBottom == car2Bottom) ||
-        (carLeft == car3Left && carBottom == car3Bottom) ||
-        (carLeft == car4Left && carBottom == car4Bottom) ||
-        (carLeft == car5Left && carBottom == car5Bottom)) {
-          car.style.animation = "none";
-          clearInterval(scoreTimer);
-          otherCar1.style.animation = "none";
-          otherCar2.style.animation = "none";
-          otherCar3.style.animation = "none";
-          otherCar4.style.animation = "none";
-          otherCar5.style.animation = "none";
-          document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
-          window.localStorage.setItem('counter', '0')
-          document.getElementById("restart-game").classList.toggle("hidden")
-      }
+      // if (
+      //   (carLeft == car1Left && carBottom == car1Bottom) || 
+      //   (carLeft == car2Left && carBottom == car2Bottom) ||
+      //   (carLeft == car3Left && carBottom == car3Bottom) ||
+      //   (carLeft == car4Left && carBottom == car4Bottom) ||
+      //   (carLeft == car5Left && carBottom == car5Bottom)) {
+      //     car.style.animation = "none";
+      //     song.pause();
+      //     clearInterval(scoreTimer);
+      //     otherCar1.style.animation = "none";
+      //     otherCar2.style.animation = "none";
+      //     otherCar3.style.animation = "none";
+      //     otherCar4.style.animation = "none";
+      //     otherCar5.style.animation = "none";
+      //     document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
+      //     window.localStorage.setItem('counter', '0')
+      //     document.getElementById("restart-game").classList.toggle("hidden")
+      // }
     }, 1);
   }
 
