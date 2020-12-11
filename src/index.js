@@ -3,6 +3,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
   let restartButton = document.getElementById("restart-button")
+
+  startButton.addEventListener("click", () => { 
+    startGame();
+  })
+
+  restartButton.addEventListener("click", () => {
+    clearIntervalsAndListeners();
+    startGame();
+  })
+
   let otherCar1 = document.getElementById("other-car-1")
   let otherCar2 = document.getElementById("other-car-2")
   let otherCar3 = document.getElementById("other-car-3")
@@ -99,36 +109,52 @@ document.addEventListener("DOMContentLoaded", () => {
       jump();
     }
   }
+  
+  function playButton() {
+    if (playPause.classList.contains('pause')) {
+      playPause.classList.remove('pause')
+      playPause.classList.add('play')
+      playPause.innerHTML = '<i class="far fa-play-circle"></i>'
+      song.pause();
+    } else {
+      playPause.classList.remove('play')
+      playPause.classList.add('pause')
+      playPause.innerHTML = '<i class="far fa-pause-circle"></i>'
+      song.play();
+    }
+  }
+
+  function muteButton() {
+    if (mute.classList.contains('muted')) {
+      mute.classList.remove('muted')
+      song.volume = 0.7;
+      mute.innerHTML = '<i class="fas fa-volume-up"></i>'
+    } else {
+      mute.classList.add('muted')
+      song.volume = 0;
+      mute.innerHTML = '<i class="fas fa-volume-mute"></i>'
+    }
+  }
+  
+
+  function clearIntervalsAndListeners(){
+    clearInterval(this.scoreTimer)
+    clearInterval(this.collision)
+    document.removeEventListener("keyup", keyRelease);
+    document.removeEventListener("keydown", keyPress);
+    document.removeEventListener("click", playButton);
+    document.removeEventListener("click", muteButton);
+  }
 
   function startGame() {
-    song.volume = 0.7;
+    if (!mute.classList.contains('muted')) {
+      song.volume = 0.5;
+    }
     song.play();
 
-    playPause.addEventListener("click", () => {
-      if (playPause.classList.contains('pause')) {
-        playPause.classList.remove('pause')
-        playPause.classList.add('play')
-        playPause.innerHTML = '<i class="far fa-play-circle"></i>'
-        song.pause();
-      } else {
-        playPause.classList.remove('play')
-        playPause.classList.add('pause')
-        playPause.innerHTML = '<i class="far fa-pause-circle"></i>'
-        song.play();
-      }
-    })
+    playPause.addEventListener("click", playButton)
+    mute.addEventListener("click", muteButton)
     
-    mute.addEventListener("click", () => {
-      if (mute.classList.contains('muted')) {
-        mute.classList.remove('muted')
-        song.volume = 0.7;
-        mute.innerHTML = '<i class="fas fa-volume-up"></i>'
-      } else {
-        mute.classList.add('muted')
-        song.volume = 0;
-        mute.innerHTML = '<i class="fas fa-volume-mute"></i>'
-      }
-    })
 
     window.localStorage.setItem('counter', '0')
     if (!document.getElementById("restart-game").classList.contains('hidden')) {
@@ -167,14 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // })
     
 
-    let scoreTimer = setInterval(() => {
+    this.scoreTimer = setInterval(() => {
       let next = parseInt(window.localStorage.counter) + 1
       window.localStorage.setItem('counter', `${next}`)
       document.getElementById('score').innerText = `${next * 100}`
     }, 1000)
 
 
-    let collision = setInterval(() => {
+    this.collision = setInterval(() => {
       let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
       let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
 
@@ -210,13 +236,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1);
   }
-
-  startButton.addEventListener("click", () => { 
-    startGame();
-  })
-
-  restartButton.addEventListener("click", () => {
-    document.removeEventListener("keydown", keyPress)
-    startGame();
-  })
 })
