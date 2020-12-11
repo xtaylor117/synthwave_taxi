@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   restartButton.addEventListener("click", () => {
-    clearIntervalsAndListeners();
-    startGame();
+    clearIntervalsAndListeners()
+    startGame()
   })
 
   let otherCar1 = document.getElementById("other-car-1")
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function jump() {
     if (car.classList != "animate") {
       car.classList.add("animate");
+      debugger
     }
     setTimeout(function(){
       car.classList.remove("animate")
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         moveLeft();
       }
     } else if (e.key === ' ' || e.key === 'Spacebar') {
+      console.log('keypress - space')
       document.getElementById('space').classList.add('pressed')
       jump();
     }
