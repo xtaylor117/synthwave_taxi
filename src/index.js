@@ -25,9 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let car = document.getElementById("car")
 
   function jump() {
-    if (car.classList != "animate") {
+    if (!car.classList.contains("animate")) {
       car.classList.add("animate");
-      debugger
     }
     setTimeout(function(){
       car.classList.remove("animate")
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         moveLeft();
       }
     } else if (e.key === ' ' || e.key === 'Spacebar') {
-      console.log('keypress - space')
+      console.log(e)
       document.getElementById('space').classList.add('pressed')
       jump();
     }
@@ -224,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car3Left && carBottom == car3Bottom) ||
         (carLeft == car4Left && carBottom == car4Bottom) ||
         (carLeft == car5Left && carBottom == car5Bottom)) {
-          car.style.animation = "none";
           song.pause();
           clearInterval(scoreTimer);
           otherCar1.style.animation = "none";
