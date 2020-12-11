@@ -105,7 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
         moveLeft();
       }
     } else if (e.key === ' ' || e.key === 'Spacebar') {
-      console.log(e)
+      if (e.target === mute) {
+        e.preventDefault();
+      } else if (e.target === playPause) {
+        e.preventDefault();
+      }
       document.getElementById('space').classList.add('pressed')
       jump();
     }
