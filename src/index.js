@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startGame() {
+
     otherCar1.classList.add('slide1')
     otherCar2.classList.add('slide2')
     otherCar3.classList.add('slide3')
@@ -165,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!mute.classList.contains('muted')) {
       song.volume = 0.5;
     }
-    
+
     song.play();
 
     playPause.addEventListener("click", playButton)
@@ -250,11 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car5Left && carBottom == car5Bottom)) {
           song.pause();
           clearInterval(scoreTimer);
-          otherCar1.style.animation = "none";
-          otherCar2.style.animation = "none";
-          otherCar3.style.animation = "none";
-          otherCar4.style.animation = "none";
-          otherCar5.style.animation = "none";
+          otherCar1.classList.remove('slide1')
+          otherCar2.classList.remove('slide2')
+          otherCar3.classList.remove('slide3')
+          otherCar4.classList.remove('slide4')
+          otherCar5.classList.remove('slide5')
           document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
           window.localStorage.setItem('counter', '0')
           document.getElementById("restart-game").classList.toggle("hidden")
