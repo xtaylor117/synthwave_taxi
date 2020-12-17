@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!mute.classList.contains('muted')) {
       song.volume = 0.5;
     }
-    // song.play();
+    
+    song.play();
 
     playPause.addEventListener("click", playButton)
     mute.addEventListener("click", muteButton)
