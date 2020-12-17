@@ -50,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); 
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   function keyRelease(e) {
@@ -120,11 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
       playPause.classList.remove('pause')
       playPause.classList.add('play')
       playPause.innerHTML = '<i class="far fa-play-circle"></i>'
+
       song.pause();
     } else {
       playPause.classList.remove('play')
       playPause.classList.add('pause')
       playPause.innerHTML = '<i class="far fa-pause-circle"></i>'
+      
       song.play();
     }
   }
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!mute.classList.contains('muted')) {
       song.volume = 0.5;
     }
-    song.play();
+    // song.play();
 
     playPause.addEventListener("click", playButton)
     mute.addEventListener("click", muteButton)
@@ -177,25 +177,34 @@ document.addEventListener("DOMContentLoaded", () => {
     otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`
     otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`
 
-    // otherCar1.addEventListener('animationiteration', () => {
-    //   otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar1.addEventListener('animationiteration', (e) => {
 
-    // otherCar2.addEventListener('animationiteration', () => {
-    //   otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+      otherCar2.style.animationPlayState = 'paused';
+      otherCar3.style.animationPlayState = 'paused';
+      otherCar4.style.animationPlayState = 'paused';
+      otherCar5.style.animationPlayState = 'paused';
 
-    // otherCar3.addEventListener('animationiteration', () => {
-    //   otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+      e.stopPropagation();
+      console.log(otherCar1.style.animationDuration)
 
-    // otherCar4.addEventListener('animationiteration', () => {
-    //   otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+      otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
+    })
 
-    // otherCar5.addEventListener('animationiteration', () => {
-    //   otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
-    // })
+    otherCar2.addEventListener('animationiteration', () => {
+      otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
+    })
+
+    otherCar3.addEventListener('animationiteration', () => {
+      otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
+    })
+
+    otherCar4.addEventListener('animationiteration', () => {
+      otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
+    })
+
+    otherCar5.addEventListener('animationiteration', () => {
+      otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
+    })
     
 
     this.scoreTimer = setInterval(() => {
@@ -221,23 +230,24 @@ document.addEventListener("DOMContentLoaded", () => {
       let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
       let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
-      if (
-        (carLeft == car1Left && carBottom == car1Bottom) || 
-        (carLeft == car2Left && carBottom == car2Bottom) ||
-        (carLeft == car3Left && carBottom == car3Bottom) ||
-        (carLeft == car4Left && carBottom == car4Bottom) ||
-        (carLeft == car5Left && carBottom == car5Bottom)) {
-          song.pause();
-          clearInterval(scoreTimer);
-          otherCar1.style.animation = "none";
-          otherCar2.style.animation = "none";
-          otherCar3.style.animation = "none";
-          otherCar4.style.animation = "none";
-          otherCar5.style.animation = "none";
-          document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
-          window.localStorage.setItem('counter', '0')
-          document.getElementById("restart-game").classList.toggle("hidden")
-      }
-    }, 1);
+      // if (
+      //   (carLeft == car1Left && carBottom == car1Bottom) || 
+      //   (carLeft == car2Left && carBottom == car2Bottom) ||
+      //   (carLeft == car3Left && carBottom == car3Bottom) ||
+      //   (carLeft == car4Left && carBottom == car4Bottom) ||
+      //   (carLeft == car5Left && carBottom == car5Bottom)) {
+      //     song.pause();
+      //     clearInterval(scoreTimer);
+      //     otherCar1.style.animation = "none";
+      //     otherCar2.style.animation = "none";
+      //     otherCar3.style.animation = "none";
+      //     otherCar4.style.animation = "none";
+      //     otherCar5.style.animation = "none";
+      //     document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
+      //     window.localStorage.setItem('counter', '0')
+      //     document.getElementById("restart-game").classList.toggle("hidden")
+      // }
+
+    }, 1000);
   }
 })

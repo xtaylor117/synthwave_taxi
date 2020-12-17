@@ -104,6 +104,8 @@ body {
     /* animation: slide3 3s infinite linear; */
 }
 
+
+
 @keyframes slide3 {
     0% {
         bottom: 374px;
@@ -132,6 +134,7 @@ body {
     /* animation: slide4 3s infinite linear; */
 }
 
+
 @keyframes slide4 {
     0% {
         bottom: 374px;
@@ -159,6 +162,7 @@ body {
     left: 349px;
     /* animation: slide5 3s infinite linear; */
 }
+
 
 @keyframes slide5 {
     0% {
