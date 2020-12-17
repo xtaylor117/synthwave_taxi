@@ -241,23 +241,23 @@ document.addEventListener("DOMContentLoaded", () => {
       let car4Bottom = parseInt(window.getComputedStyle(otherCar4).getPropertyValue("bottom"))
       let car5Bottom = parseInt(window.getComputedStyle(otherCar5).getPropertyValue("bottom"))
 
-      // if (
-      //   (carLeft == car1Left && carBottom == car1Bottom) || 
-      //   (carLeft == car2Left && carBottom == car2Bottom) ||
-      //   (carLeft == car3Left && carBottom == car3Bottom) ||
-      //   (carLeft == car4Left && carBottom == car4Bottom) ||
-      //   (carLeft == car5Left && carBottom == car5Bottom)) {
-      //     song.pause();
-      //     clearInterval(scoreTimer);
-      //     otherCar1.style.animation = "none";
-      //     otherCar2.style.animation = "none";
-      //     otherCar3.style.animation = "none";
-      //     otherCar4.style.animation = "none";
-      //     otherCar5.style.animation = "none";
-      //     document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
-      //     window.localStorage.setItem('counter', '0')
-      //     document.getElementById("restart-game").classList.toggle("hidden")
-      // }
+      if (
+        (carLeft == car1Left && carBottom == car1Bottom) || 
+        (carLeft == car2Left && carBottom == car2Bottom) ||
+        (carLeft == car3Left && carBottom == car3Bottom) ||
+        (carLeft == car4Left && carBottom == car4Bottom) ||
+        (carLeft == car5Left && carBottom == car5Bottom)) {
+          song.pause();
+          clearInterval(scoreTimer);
+          otherCar1.style.animation = "none";
+          otherCar2.style.animation = "none";
+          otherCar3.style.animation = "none";
+          otherCar4.style.animation = "none";
+          otherCar5.style.animation = "none";
+          document.getElementById("your-score").innerText = `${parseInt(window.localStorage.counter) * 100}`
+          window.localStorage.setItem('counter', '0')
+          document.getElementById("restart-game").classList.toggle("hidden")
+      }
 
     }, 1);
   }
