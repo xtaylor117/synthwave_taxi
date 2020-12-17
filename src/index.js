@@ -140,6 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
       mute.innerHTML = '<i class="fas fa-volume-mute"></i>'
     }
   }
+
+  function changeAnimationDuration(e) {
+
+  }
   
 
   function clearIntervalsAndListeners(){
@@ -152,6 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startGame() {
+    otherCar1.classList.add('slide1')
+    otherCar2.classList.add('slide2')
+    otherCar3.classList.add('slide3')
+    otherCar4.classList.add('slide4')
+    otherCar5.classList.add('slide5')
+
     if (!mute.classList.contains('muted')) {
       song.volume = 0.5;
     }
@@ -170,42 +180,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("keyup", keyRelease);
     document.addEventListener("keydown", keyPress);
-    
-    otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`
-    otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`
-    otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`
-    otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`
-    otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`
 
-    otherCar1.addEventListener('animationiteration', (e) => {
-
-      otherCar2.style.animationPlayState = 'paused';
-      otherCar3.style.animationPlayState = 'paused';
-      otherCar4.style.animationPlayState = 'paused';
-      otherCar5.style.animationPlayState = 'paused';
-
-      e.stopPropagation();
-      console.log(otherCar1.style.animationDuration)
-
-      otherCar1.style.animation = `slide1 ${getRandomInt(2, 5)}s linear infinite`;
+    otherCar1.addEventListener('animationend', () => {
+      otherCar1.classList.remove('slide1')
+      otherCar1.style.animationDuration = `${getRandomInt(2, 5)}s`
+      void otherCar1.offsetWidth;
+      otherCar1.classList.add('slide1')
     })
 
-    otherCar2.addEventListener('animationiteration', () => {
-      otherCar2.style.animation = `slide2 ${getRandomInt(2, 5)}s linear infinite`;
-    })
-
-    otherCar3.addEventListener('animationiteration', () => {
-      otherCar3.style.animation = `slide3 ${getRandomInt(2, 5)}s linear infinite`;
-    })
-
-    otherCar4.addEventListener('animationiteration', () => {
-      otherCar4.style.animation = `slide4 ${getRandomInt(2, 5)}s linear infinite`;
-    })
-
-    otherCar5.addEventListener('animationiteration', () => {
-      otherCar5.style.animation = `slide5 ${getRandomInt(2, 5)}s linear infinite`;
+    otherCar2.addEventListener('animationend', () => {
+      otherCar2.classList.remove('slide2')
+      otherCar2.style.animationDuration = `${getRandomInt(2, 5)}s`
+      void otherCar2.offsetWidth;
+      otherCar2.classList.add('slide2')
     })
     
+    otherCar3.addEventListener('animationend', () => {
+      console.log(otherCar3.style)
+      otherCar3.classList.remove('slide3')
+      otherCar3.style.animationDuration = `${getRandomInt(2, 5)}s`
+      void otherCar3.offsetWidth;
+      otherCar3.classList.add('slide3')
+    })
+    
+    otherCar4.addEventListener('animationend', () => {
+      console.log(otherCar4.style)
+      otherCar4.classList.remove('slide4')
+      otherCar4.style.animationDuration = `${getRandomInt(2, 5)}s`
+      void otherCar4.offsetWidth;
+      otherCar4.classList.add('slide4')
+    })
+
+    otherCar5.addEventListener('animationend', () => {
+      otherCar5.classList.remove('slide5')
+      otherCar5.style.animationDuration = `${getRandomInt(2, 5)}s`
+      void otherCar5.offsetWidth;
+      otherCar5.classList.add('slide5')
+    })
 
     this.scoreTimer = setInterval(() => {
       let next = parseInt(window.localStorage.counter) + 1
@@ -248,6 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
       //     document.getElementById("restart-game").classList.toggle("hidden")
       // }
 
-    }, 1000);
+    }, 1);
   }
 })
