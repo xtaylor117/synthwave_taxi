@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function keyRelease(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
+    if(e.key == "d" || e.key == "ArrowRight") {
       document.getElementById('D').classList.remove('pressed')
-    } else if(e.key == "Left" || e.key == "ArrowLeft") {
+    } else if(e.key == "a" || e.key == "ArrowLeft") {
       document.getElementById('A').classList.remove('pressed')
     } else if (e.key === ' ' || e.key === 'Spacebar') {
       document.getElementById('space').classList.remove('pressed')
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function keyPress(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
+    if(e.key == "d" || e.key == "ArrowRight") {
       document.getElementById('D').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         car.classList.add("lane3")
         moveRight();
       }
-    } else if(e.key == "Left" || e.key == "ArrowLeft") {
+    } else if(e.key == "a" || e.key == "ArrowLeft") {
       document.getElementById('A').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
