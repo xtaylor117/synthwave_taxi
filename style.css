@@ -41,7 +41,10 @@ body {
 #other-car-1 {
     width: 10px;
     height: 10px;
-    background: yellow;
+    background-image: url('./assets/taxi1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     bottom: 374px;
     left: 281px;
@@ -72,11 +75,13 @@ body {
 #other-car-2 {
     width: 10px;
     height: 10px;
-    background: yellow;
+    background-image: url('./assets/taxi2.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     bottom: 374px;
     left: 298px;
-    /* animation: slide2 3s infinite linear; */
 }
 
 .slide2 {
@@ -104,11 +109,13 @@ body {
 #other-car-3 {
     width: 10px;
     height: 10px;
-    background: yellow;
+    background-image: url('./assets/taxi3.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     bottom: 374px;
     left: 315px;
-    /* animation: slide3 3s infinite linear; */
 }
 
 .slide3 {
@@ -136,11 +143,13 @@ body {
 #other-car-4 {
     width: 10px;
     height: 10px;
-    background: yellow;
+    background-image: url('./assets/taxi4.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     bottom: 374px;
     left: 332px;
-    /* animation: slide4 3s infinite linear; */
 }
 
 .slide4 {
@@ -168,11 +177,13 @@ body {
 #other-car-5 {
     width: 10px;
     height: 10px;
-    background: yellow;
+    background-image: url('./assets/taxi5.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     bottom: 374px;
     left: 349px;
-    /* animation: slide5 3s infinite linear; */
 }
 
 .slide5 {

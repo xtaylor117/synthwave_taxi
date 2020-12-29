@@ -1,5 +1,3 @@
-// console.log("Webpack is working!")
-
 document.addEventListener("DOMContentLoaded", () => {
   let startButton = document.getElementById("start-button");
   let restartButton = document.getElementById("restart-button")
@@ -19,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let otherCar4 = document.getElementById("other-car-4")
   let otherCar5 = document.getElementById("other-car-5")
   let song = document.getElementById("audio")
+  let crash = document.getElementById("crash")
   let playPause = document.getElementById("play-pause")
   let mute = document.getElementById("mute")
 
@@ -228,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     this.collision = setInterval(() => {
+
       let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"))
       let carBottom = parseInt(window.getComputedStyle(car).getPropertyValue("bottom"))
 
@@ -250,6 +250,9 @@ document.addEventListener("DOMContentLoaded", () => {
         (carLeft == car4Left && carBottom == car4Bottom) ||
         (carLeft == car5Left && carBottom == car5Bottom)) {
           song.pause();
+          crash.currentTime = 1.5;
+          crash.volume = 0.7;
+          crash.play();
           clearInterval(scoreTimer);
           otherCar1.classList.remove('slide1')
           otherCar2.classList.remove('slide2')
