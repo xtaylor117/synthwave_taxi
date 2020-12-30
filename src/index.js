@@ -136,11 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function changeAnimationDuration(e) {
-
-  }
-  
-
   function clearIntervalsAndListeners(){
     clearInterval(this.scoreTimer)
     clearInterval(this.collision)
