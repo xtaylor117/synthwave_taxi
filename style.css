@@ -4,6 +4,9 @@ body {
 #game-box {
     display: flex;
     justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
 }
 
 #game {
@@ -375,8 +378,6 @@ body {
     width: 20%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
-    margin-top: 80px;
-    margin-bottom: 50px;
 }
 
 #score-header {
@@ -400,8 +401,6 @@ body {
     width: 20%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
-    margin-top: 80px;
-    margin-bottom: 50px;
 }
 
 #controls-header {
