@@ -19,45 +19,61 @@
 </head>
 <body>
     <!-- <canvas id="game-canvas"></canvas> -->
-    <div id="left-side">
-        <h1 id="controls-header"><i class="far fa-keyboard"></i></h1>
-        <div id="switches">
-            <p id="switch-left">Move Left</p>
-            <p id="switch-right">Move Right</p>
-        </div>
-        <div id="keys">
-            <p id="A">←</p>
-            <p id="D">→</p>
-        </div>
-        <div id="space-mech">
-            <p id="jump">Jump</p>
-            <p id="space">SPACE</p>
-        </div>
-        <div id="links-container">
-            <a href="https://github.com/xtaylor117" target="_blank" rel="noreferrer"><i class="fab fa-github-square"></i></a>
-            <a href="https://angel.co/u/taylor-117" target="_blank" rel="noreferrer"><i class="fab fa-angellist"></i></a>
-            <a href="https://www.linkedin.com/in/taylorlee117/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-
-    <div id="right-side">
-        <h1 id="score-header">Current Score:</h1>
-        <div id="score">0</div>
-        <div id="audio-container">
-            <h1 id="song-title">HOME
-                <span id="song-name">Resonance</span>
-            </h1>
-            <div id="song-image-container">
-                <img id="song-image" src="./assets/synthwave-cover.jpg">
+    <div id="game-box">
+        <div id="left-side">
+            <h1 id="controls-header"><i class="far fa-keyboard"></i></h1>
+            <div id="switches">
+                <p id="switch-left">Move Left</p>
+                <p id="switch-right">Move Right</p>
             </div>
-            <audio src="./assets/Resonance.mp3" id="audio"></audio>
-            <audio src="./assets/impact_car_crash.mp3" id="crash"></audio>
-            <div id="audio-controls">
-                <button id="play-pause" class="pause"><i class="far fa-pause-circle"></i></button>
-                <button id="mute"><i class="fas fa-volume-up"></i></button>
+            <div id="keys">
+                <p id="A">←</p>
+                <p id="D">→</p>
+            </div>
+            <div id="space-mech">
+                <p id="jump">Jump</p>
+                <p id="space">SPACE</p>
+            </div>
+            <div id="links-container">
+                <a href="https://github.com/xtaylor117" target="_blank" rel="noreferrer"><i
+                        class="fab fa-github-square"></i></a>
+                <a href="https://angel.co/u/taylor-117" target="_blank" rel="noreferrer"><i class="fab fa-angellist"></i></a>
+                <a href="https://www.linkedin.com/in/taylorlee117/" target="_blank" rel="noreferrer"><i
+                        class="fab fa-linkedin"></i></a>
             </div>
         </div>
+        
+        <div id="game">
+            <div id="road">
+                <div id="other-car-1"></div>
+                <div id="other-car-2"></div>
+                <div id="other-car-3"></div>
+                <div id="other-car-4"></div>
+                <div id="other-car-5"></div>
+                <div id="car" class="lane3"></div>
+            </div>
+        </div>
+        
+        <div id="right-side">
+            <h1 id="score-header">Current Score:</h1>
+            <div id="score">0</div>
+            <div id="audio-container">
+                <h1 id="song-title">HOME
+                    <span id="song-name">Resonance</span>
+                </h1>
+                <div id="song-image-container">
+                    <img id="song-image" src="./assets/synthwave-cover.jpg">
+                </div>
+                <audio src="./assets/Resonance.mp3" id="audio"></audio>
+                <audio src="./assets/impact_car_crash.mp3" id="crash"></audio>
+                <div id="audio-controls">
+                    <button id="play-pause" class="pause"><i class="far fa-pause-circle"></i></button>
+                    <button id="mute"><i class="fas fa-volume-up"></i></button>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
     <div id="intro-container">
         <div id="instructions">
@@ -86,16 +102,5 @@
         </div>
     </div>
 
-
-    <div id="game">
-        <div id="road">
-            <div id="other-car-1"></div>
-            <div id="other-car-2"></div>
-            <div id="other-car-3"></div>
-            <div id="other-car-4"></div>
-            <div id="other-car-5"></div>
-            <div id="car" class="lane3"></div>
-        </div>
-    </div>
 </body>
 </html>

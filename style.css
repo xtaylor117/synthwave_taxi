@@ -1,10 +1,12 @@
 body {
     background: rgb(113, 19, 105);
 }
+#game-box {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 #game {
-    position: fixed;
-    left: 24vw;
     width: 640px;
     height: 640px;
     background-image: url(./assets/Synthwave-taxi-bg.png);
@@ -367,15 +369,14 @@ body {
 
 #right-side {
     margin-right: 1.5%;
-    position: relative;
-    top: 7vh;
-    float: right;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 
 #score-header {
@@ -393,15 +394,14 @@ body {
 
 #left-side {
     margin-left: 1.5%;
-    position: relative;
-    top: 20vh;
-    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
     background: rgba(245, 245, 245, 0.305);
     border-radius: 5px;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 
 #controls-header {

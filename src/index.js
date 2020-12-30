@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       song.volume = 0.5;
     }
 
+    song.currentTime = 0;
     song.play();
 
     playPause.addEventListener("click", playButton)
