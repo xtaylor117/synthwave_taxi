@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function keyPress(e) {
     if(e.key == "d" || e.key == "ArrowRight") {
+      e.preventDefault();
       document.getElementById('D').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         moveRight();
       }
     } else if(e.key == "a" || e.key == "ArrowLeft") {
+      e.preventDefault();
       document.getElementById('A').classList.add('pressed')
       if(car.classList.contains("lane3")) {
         car.classList.remove("lane3")
